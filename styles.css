@@ -53,6 +53,35 @@ a {
     box-sizing: border-box;
 }
 
+::-webkit-input-placeholder {
+    /* WebKit browsers，webkit内核浏览器 */
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    font-family: Syncopate;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    font-family: Syncopate;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    font-family: Syncopate;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    font-family: Syncopate;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 .flex_row {
     display: flex;
     flex-direction: row;
@@ -84,6 +113,7 @@ a {
 
 
 .home_outer {
+    overflow: hidden;
     background-image: url(img/home_top_bg.png), url(img/home_bottom_bg.png);
     background-repeat: no-repeat, no-repeat;
     background-position: top center, bottom center;
@@ -95,7 +125,6 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 0;
 }
 
 .head_left {
@@ -116,8 +145,8 @@ a {
 .head_center_tab p {
     font-weight: 700;
     color: #ffffff;
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 0px;
     text-transform: uppercase;
 
 }
@@ -191,6 +220,79 @@ a {
 
 .game_nft_line {
     opacity: 20%;
+}
+
+
+
+
+
+
+
+.mint_nft_left img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.mint_right_text {
+    color: #ffffff;
+}
+.mint_right_text p {
+    font-weight: 400;
+}
+.mint_right_text span {
+    font-weight: 700;
+}
+
+
+
+.mint_right_title p {
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+
+.mint_right_title span {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+}
+
+.mint_right_line {
+    width: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 61.46%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mint_input {
+    width: 90%;
+    height: 76px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 30px;
+    padding: 0 30px;
+    text-align: center;
+    font-family: Syncopate;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 60px;
+    border-color: rgba(255, 255, 255, 0.15);
+    -moz-appearance:textfield;
+}
+
+.mint_input:focus {
+    outline: 1px solid #38f9d7;
+}
+
+.mint_btn {
+    width: 90%;
+    font-weight: 700;
+    color: #0d1017;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(126.15deg, #43e97b 0%, #38f9d7 100%);
+    border-radius: 36px;
+    margin-top: 20px;
 }
 
 
@@ -360,27 +462,32 @@ a {
     flex-direction: row;
     align-items: center;
 }
+
 .collectors_item_img {
-    width: 62px;
-    height: 62px;
+    width: 50px;
+    height: 50px;
     border-radius: 31px;
     margin-right: 15px;
 }
+
 .collectors_item div {
     width: 200px;
 }
+
 .collectors_item span {
-    color:#ffffff;
+    color: #ffffff;
     font-size: 12px;
     line-height: 20px;
-    letter-spacing:0.5%;
+    letter-spacing: 0.5px;
 }
+
 .collectors_item p {
-    font-weight:700;
-    color:#ffffff;
-    font-size:18px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 18px;
     line-height: 28px;
 }
+
 .item_img {
     width: 20px;
     height: 20px;
@@ -399,6 +506,7 @@ a {
 
 .foot_left {
     flex: 1;
+    align-items: center;
 }
 
 .foot_left img {
@@ -408,10 +516,6 @@ a {
 
 .foot_left p {
     color: rgba(254, 254, 254, 0.72);
-}
-
-.foot_left_link {
-    padding-top: 20px;
 }
 
 .foot_left_link img {
@@ -426,7 +530,7 @@ a {
 }
 
 .foot_right_box {
-   flex: 1;
+    flex: 1;
 }
 
 .foot_right_box h5 {
@@ -446,11 +550,12 @@ a {
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1152px) {
     .wrapper {
         max-width: 576px;
-        margin: 0 auto;
-        padding: 0 10px;
+        margin: 8px auto;
+        padding-left: 10px;
+        padding-right: 16px;
     }
 
     .flex_row_column {
@@ -472,13 +577,14 @@ a {
     }
 
     .home_top {
-        margin-top: 46px;
-        height: 531px;
+        
+        height: 512px;
         background-size: 426px;
         background-position: center bottom;
     }
 
     .home_top_box h1 {
+        margin-top:40px ;
         font-size: 26px;
         line-height: 38px;
     }
@@ -494,6 +600,49 @@ a {
     .title_box p {
         font-size: 12px;
         line-height: 20px;
+    }
+
+
+    .mint_nft {
+        padding-top: 43px;
+    }
+    .mint_nft_box {
+        padding-top: 26px;
+    }
+    .mint_nft_right {
+        padding-top: 48px;
+    }
+    .mint_right_text {
+        font-size: 12px;
+        line-height: 20px;
+        padding-bottom: 21px;
+    }
+    .mint_right_title p {
+        font-size: 20px;
+        padding: 10px 0;
+    }
+    .mint_right_title span {
+        font-size: 12px;
+        padding-bottom: 10px;
+    }
+    .mint_right_line {
+        height: 63px;
+    }
+    .mint_right_title {
+        width: 100%;
+        padding-bottom: 21px;
+    }
+    .mint_input_box {
+        text-align: center;
+    }
+    .mint_input {
+        width: 80%;
+        height: 56px;
+    }
+    .mint_btn {
+        width: 80%;
+        line-height: 56px;
+        margin: 20px auto 0;
     }
 
     .game_nft {
@@ -518,16 +667,16 @@ a {
     .game_nft_line {
         width: 100%;
         height: 2px;
-        margin: 20px 0;
+        margin: 5px 0;
         background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.05) 100%);
     }
 
     .about_elf {
-        padding-top: 50px;
+        padding-top: 100px;
     }
 
     .about_elf_box {
-        padding-top: 250px;
+        padding-top: 200px;
         padding-bottom: 35px;
         background-size: 150%;
     }
@@ -563,7 +712,6 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-
 
 
     .nft_show {
@@ -654,6 +802,7 @@ a {
         width: 46%;
         margin: 2%;
     }
+
     .cooperate_item img {
         width: 100%;
         height: 44px;
@@ -693,8 +842,8 @@ a {
     }
 
     .contact_us_item img {
-        width: 27px;
-        height: 27px;
+        width: 40px;
+        height: 40px;
         margin-bottom: 12px;
     }
 
@@ -707,9 +856,14 @@ a {
         padding-bottom: 38px;
     }
 
+    .foot_left {
+        padding: 0  30px;
+    }
+
     .foot_left p {
         font-size: 12px;
         line-height: 20px;
+        padding-bottom: 20px;
     }
 
     .foot_right {
@@ -727,10 +881,10 @@ a {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1152px) {
     .wrapper {
         width: 1152px;
-        margin: 0 auto
+        margin: 20px auto
     }
 
     .flex_row_column {
@@ -748,8 +902,8 @@ a {
     }
 
     .home_top {
-        margin-top: 92px;
-        height: 1102px;
+        margin-top: 62px;
+        height: 1000px;
         background-size: 852px;
         background-position: bottom center;
     }
@@ -774,6 +928,54 @@ a {
         font-size: 15px;
         line-height: 24px;
     }
+
+    .mint_nft {
+        padding-top: 86px;
+    }
+    .mint_nft_box {
+        padding-top: 52px;
+    }
+    .mint_nft_left {
+        flex: 1;
+        padding-right: 27px;
+    }
+    .mint_nft_right {
+        flex: 1;
+        padding-top: 48px;
+        padding-left: 27px;
+
+    }
+    .mint_right_text {
+        font-size: 15px;
+        line-height: 24px;
+        padding-bottom: 42px;
+    }
+    .mint_right_title p {
+        font-size: 34px;
+        padding: 18px 0;
+    }
+    .mint_right_title span {
+        font-size: 16px;
+        padding-bottom: 18px;
+    }
+    .mint_right_line {
+        height: 106px;
+    }
+    .mint_right_title {
+        width: 80%;
+        padding-bottom: 42px;
+    }
+    .mint_input {
+        height: 76px;
+    }
+    .mint_btn {
+        line-height: 76px;
+    }
+
+
+
+
+
 
     .game_nft {
         padding-top: 62px;
@@ -991,7 +1193,7 @@ a {
 
     .home_foot {
         padding-top: 50px;
-        padding-bottom: 76px;
+        padding-bottom: 56px;
     }
 
     .foot_left {
