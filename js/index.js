@@ -41,7 +41,7 @@ async function mint(){
         alert('Please input quantity');
         return;
     }
-    let amount = parseInt(quantity) * 0.08;
+    let amount = parseInt(quantity) * 0.02;
     amount = web3.utils.toWei(amount+"", "ether");
     let c = new web3.eth.Contract(abi,contract);
     await c.methods.mint(parseInt(quantity)+"").send({from:address,value:amount+""});
