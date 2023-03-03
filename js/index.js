@@ -18,6 +18,7 @@ async function connectWallet() {
         let accounts = await window.ethereum.request({method:'eth_requestAccounts'});
         web3 = new Web3(window.ethereum);
         address = accounts[0];
+        document.getElementById("mintbtn").innerHTML="Mint";
         refreshTotalSupply();
     }else{
         alert('Please, Connect your wallet!');
@@ -32,7 +33,7 @@ async function refreshTotalSupply(){
 
 async function mint(){
     if(!address) {
-        alert('Please connect your wallet');
+        connectWallet();
         return;
     }
     let quantity = document.getElementById("quantity").value;
@@ -41,7 +42,7 @@ async function mint(){
         return;
     }
     let amount = parseInt(quantity) * 0.08;
-    amount = web3.utils.toWei(amount, "ether");
+    amount = web3.utils.toWei(amount+"", "ether");
     let c = new web3.eth.Contract(abi,contract);
     await c.methods.mint(parseInt(quantity)+"").send({from:address,value:amount+""});
     alert('Minted success');
@@ -49,5 +50,3 @@ async function mint(){
         refreshTotalSupply();
     }, 5000); 
 }
-
-window.onload = function(){ connectWallet() }
