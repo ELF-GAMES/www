@@ -43,7 +43,7 @@ async function mint(){
     let amount = parseInt(quantity) * 0.08;
     amount = web3.utils.toWei(amount, "ether");
     let c = new web3.eth.Contract(abi,contract);
-    await c.methods.mint(quantity).send({from:address,value:amount});
+    await c.methods.mint(parseInt(quantity)+"").send({from:address,value:amount+""});
     alert('Minted success');
     setTimeout(() => {
         refreshTotalSupply();
